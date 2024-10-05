@@ -25,8 +25,8 @@ public class TestBaseExtended {
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(
-                "enabledVNC", true,
-                "enabledVideo", true
+                "enableVNC", true,
+                "enableVideo", true
         ));
         Configuration.browserCapabilities = capabilities;
     }
