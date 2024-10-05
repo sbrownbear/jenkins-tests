@@ -7,6 +7,7 @@ import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.util.Map;
@@ -27,6 +28,7 @@ public class TestBaseExtended {
                 "enabledVNC", true,
                 "enabledVideo", true
         ));
+        Configuration.browserCapabilities = capabilities;
     }
 
     @BeforeEach
@@ -39,7 +41,6 @@ public class TestBaseExtended {
         Attach.screenshotAs("Last Screenshot");
         Attach.pageSource();
         Attach.browserConsoleLogs();
-
+        Attach.addVideo();
     }
-
 }
